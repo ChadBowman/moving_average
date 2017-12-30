@@ -1,2 +1,3 @@
 require "spec"
-require "../src/moving_average"
+require "benchmark"
+require "../src/*"
