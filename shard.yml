@@ -4,6 +4,9 @@ version: 0.1.0
 authors:
   - Chad Bowman <chad.bowman0@gmail.com>
 
-crystal: 0.23.1
+description: |
+  📈 Calculate different Moving Averages
 
 license: MIT
+
+crystal: 0.23.1

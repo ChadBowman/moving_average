@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/ChadBowman/moving_average">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>Array(T) - github.com/ChadBowman/moving_average</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" current" data-id="github.com/ChadBowman/moving_average/Array" data-name="array(t)">
+      <a href="Array.html">Array</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/ChadBowman/moving_average/MovingAverage" data-name="movingaverage(t)">
+      <a href="MovingAverage.html">MovingAverage</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/ChadBowman/moving_average/MovingAverage/InsufficientDataError" data-name="movingaverage::insufficientdataerror">
+      <a href="MovingAverage/InsufficientDataError.html">InsufficientDataError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Array(T)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="Array.html">Array(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>An <code><a href="Array.html">Array</a></code> is an ordered, integer-indexed collection of objects of type T.</p>
+
+<p>Array indexing starts at 0. A negative index is assumed to be
+relative to the end of the array: -1 indicates the last element,
+-2 is the next to last element, and so on.</p>
+
+<p>An <code><a href="Array.html">Array</a></code> can be created using the usual <code>new</code> method (several are provided), or with an array literal:</p>
+
+<pre><code><span class="t">Array</span>(<span class="t">Int32</span>).<span class="k">new</span>  <span class="c"># &#61;&gt; &#91;&#93;</span>
+[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>]         <span class="c"># Array&#40;Int32&#41;</span>
+[<span class="n">1</span>, <span class="s">&quot;hello&quot;</span>, <span class="s">'x'</span>] <span class="c"># Array&#40;Int32 | String | Char&#41;</span></code></pre>
+
+<p>An <code><a href="Array.html">Array</a></code> can have mixed types, meaning T will be a union of types, but these are determined
+when the array is created, either by specifying T or by using an array literal. In the latter
+case, T will be set to the union of the array literal elements' types.</p>
+
+<p>When creating an empty array you must always specify T:</p>
+
+<pre><code><span class="o">[]</span> <span class="k">of</span> <span class="t">Int32</span> <span class="c"># same as Array&#40;Int32&#41;</span>
+<span class="o">[]</span>          <span class="c"># syntax error</span></code></pre>
+
+<p>An <code><a href="Array.html">Array</a></code> is implemented using an internal buffer of some capacity
+and is reallocated when elements are pushed to it when more capacity
+is needed. This is normally known as a <a href="http://en.wikipedia.org/wiki/Dynamic_array" target="_blank">dynamic array</a>.</p>
+
+<p>You can use a special array literal syntax with other types too, as long as they define an argless
+<code>new</code> method and a <code><<</code> method. <code>Set</code> is one such type:</p>
+
+<pre><code>set <span class="o">=</span> <span class="t">Set</span>{<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>} <span class="c"># &#61;&gt; Set&#123;1, 2, 3&#125;</span>
+set.<span class="k">class</span>          <span class="c"># &#61;&gt; Set&#40;Int32&#41;</span></code></pre>
+
+<p>The above is the same as this:</p>
+
+<pre><code>set <span class="o">=</span> <span class="t">Set</span>(<span class="k">typeof</span>(<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>)).<span class="k">new</span>
+set <span class="o"><<</span> <span class="n">1</span>
+set <span class="o"><<</span> <span class="n">2</span>
+set <span class="o"><<</span> <span class="n">3</span></code></pre>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">Comparable(<a href="Array.html">Array(T)</a>)</li>
+  
+    <li class="other-type">Indexable(T)</li>
+  
+    <li class="other-type"><a href="MovingAverage.html">MovingAverage(T)</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average.cr#L31" target="_blank">moving_average.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="MovingAverage.html">MovingAverage(T)</a></code></h3>
+  
+  
+    <a href="MovingAverage.html#ema%28period%3AInt%29-instance-method" class="tooltip">
+      <span>ema(period : Int)</span>
+    ema</a>, 
+    
+  
+    <a href="MovingAverage.html#ema%21%28period%3AInt%2Cvalue%3AT%2Cprevious_value%3Dnil%29-instance-method" class="tooltip">
+      <span>ema!(period : Int, value : T, previous_value = <span class="n">nil</span>)</span>
+    ema!</a>, 
+    
+  
+    <a href="MovingAverage.html#exponential_moving_average%28period%3AInt%29-instance-method" class="tooltip">
+      <span>exponential_moving_average(period : Int)</span>
+    exponential_moving_average</a>, 
+    
+  
+    <a href="MovingAverage.html#exponential_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_ema%3Dnil%29-instance-method" class="tooltip">
+      <span>exponential_moving_average!(period : Int, value : T, previous_ema = <span class="n">nil</span>)</span>
+    exponential_moving_average!</a>, 
+    
+  
+    <a href="MovingAverage.html#simple_moving_average%28period%3AInt%29-instance-method" class="tooltip">
+      <span>simple_moving_average(period : Int)</span>
+    simple_moving_average</a>, 
+    
+  
+    <a href="MovingAverage.html#sma%28period%3AInt%29-instance-method" class="tooltip">
+      <span>sma(period : Int)</span>
+    sma</a>, 
+    
+  
+    <a href="MovingAverage.html#smma%28period%3AInt%29-instance-method" class="tooltip">
+      <span>smma(period : Int)</span>
+    smma</a>, 
+    
+  
+    <a href="MovingAverage.html#smma%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method" class="tooltip">
+      <span>smma!(period : Int, value : T, previous_smma = <span class="n">nil</span>)</span>
+    smma!</a>, 
+    
+  
+    <a href="MovingAverage.html#smoothed_moving_average%28period%3AInt%29-instance-method" class="tooltip">
+      <span>smoothed_moving_average(period : Int)</span>
+    smoothed_moving_average</a>, 
+    
+  
+    <a href="MovingAverage.html#smoothed_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method" class="tooltip">
+      <span>smoothed_moving_average!(period : Int, value : T, previous_smma = <span class="n">nil</span>)</span>
+    smoothed_moving_average!</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
