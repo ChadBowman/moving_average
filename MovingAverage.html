@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/ChadBowman/moving_average">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>MovingAverage(T) - github.com/ChadBowman/moving_average</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" " data-id="github.com/ChadBowman/moving_average/Array" data-name="array(t)">
+      <a href="Array.html">Array</a>
+      
+    </li>
+  
+  <li class="parent current" data-id="github.com/ChadBowman/moving_average/MovingAverage" data-name="movingaverage(t)">
+      <a href="MovingAverage.html">MovingAverage</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/ChadBowman/moving_average/MovingAverage/InsufficientDataError" data-name="movingaverage::insufficientdataerror">
+      <a href="MovingAverage/InsufficientDataError.html">InsufficientDataError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> MovingAverage(T)
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>The <code><a href="MovingAverage.html">MovingAverage</a></code> mixin provides methods for calculating different moving averages of a collection.</p>
+
+<p>Including types must respond to basic arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>.</p>
+
+<p><code><a href="MovingAverage.html">MovingAverage</a></code> uses the following methods which must be defined:</p>
+
+<ul><li><code>new</code> for creating a new instance of <code>self</code>.</li><li><code>size</code> for determining the size of the collection.</li><li><code>sum</code> for determining the sum of the collection.</li><li><code>last</code> for retrieving the last element of the collection.</li><li><code><<(value : T)</code> for appending an element to the end of the collection.</li><li><code>[] (range : Range(Int, Int))</code> for retrieving a section of the collection.</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="Array.html">Array(T)</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/errors.cr#L1" target="_blank">moving_average/errors.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/exponential_moving_average.cr#L1" target="_blank">moving_average/exponential_moving_average.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/simple_moving_average.cr#L1" target="_blank">moving_average/simple_moving_average.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/smoothed_moving_average.cr#L1" target="_blank">moving_average/smoothed_moving_average.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/version.cr#L1" target="_blank">moving_average/version.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average.cr#L15" target="_blank">moving_average.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#ema%28period%3AInt%29-instance-method" class="signature"><strong>#ema</strong>(period : Int)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="MovingAverage.html#exponential_moving_average%28period%3AInt%29-instance-method">#exponential_moving_average</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ema%21%28period%3AInt%2Cvalue%3AT%2Cprevious_value%3Dnil%29-instance-method" class="signature"><strong>#ema!</strong>(period : Int, value : T, previous_value = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="MovingAverage.html#exponential_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_ema%3Dnil%29-instance-method">#exponential_moving_average!</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exponential_moving_average%28period%3AInt%29-instance-method" class="signature"><strong>#exponential_moving_average</strong>(period : Int)</a>
+        
+          <div class="summary"><p>Creates a new <code>self</code> containing the exponential moving average (EMA) of each element.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exponential_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_ema%3Dnil%29-instance-method" class="signature"><strong>#exponential_moving_average!</strong>(period : Int, value : T, previous_ema = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Evaluates the exponential moving average of <em>value</em> and appends it to <code>self</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#simple_moving_average%28period%3AInt%29-instance-method" class="signature"><strong>#simple_moving_average</strong>(period : Int)</a>
+        
+          <div class="summary"><p>Creates a new <code>self</code> containing the simple moving average (SMA) of each element.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sma%28period%3AInt%29-instance-method" class="signature"><strong>#sma</strong>(period : Int)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="MovingAverage.html#simple_moving_average%28period%3AInt%29-instance-method">#simple_moving_average</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#smma%28period%3AInt%29-instance-method" class="signature"><strong>#smma</strong>(period : Int)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="MovingAverage.html#smoothed_moving_average%28period%3AInt%29-instance-method">#smoothed_moving_average</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#smma%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method" class="signature"><strong>#smma!</strong>(period : Int, value : T, previous_smma = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Alias for <code><a href="MovingAverage.html#smoothed_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method">#smoothed_moving_average!</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#smoothed_moving_average%28period%3AInt%29-instance-method" class="signature"><strong>#smoothed_moving_average</strong>(period : Int)</a>
+        
+          <div class="summary"><p>Creates a new <code>self</code> containing the smoothed moving average (SMMA) of each element.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#smoothed_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method" class="signature"><strong>#smoothed_moving_average!</strong>(period : Int, value : T, previous_smma = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Evaluates the smoothed moving average of <em>value</em> and appends it to <code>self</code>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="ema&#40;period:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>ema</strong>(period : Int)
+
+        <a class="method-permalink" href="#ema%28period%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Alias for <code><a href="MovingAverage.html#exponential_moving_average%28period%3AInt%29-instance-method">#exponential_moving_average</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/exponential_moving_average.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ema&#33;&#40;period:Int,value:T,previous_value&#61;nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>ema!</strong>(period : Int, value : T, previous_value = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#ema%21%28period%3AInt%2Cvalue%3AT%2Cprevious_value%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Alias for <code><a href="MovingAverage.html#exponential_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_ema%3Dnil%29-instance-method">#exponential_moving_average!</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/exponential_moving_average.cr#L63" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exponential_moving_average&#40;period:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>exponential_moving_average</strong>(period : Int)
+
+        <a class="method-permalink" href="#exponential_moving_average%28period%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new <code>self</code> containing the exponential moving average (EMA) of each element.</p>
+
+<p>The EMA can be defined as the series of weighted values in which the weighting
+decreases exponentially. The first element of the EMA is the simple moving average,
+all subsequent elements can be calculated as follows:</p>
+
+<pre><code class='language-text'>EMAi = weighting_factor * (Pi - EMAi-1) + EMAi-1</code></pre>
+
+<p>Where</p>
+
+<ul><li><em>Pi</em> is the value of element i.</li><li><em>weighting_factor</em> is a constant between 0 and 1, determined by the <em>period</em>.</li></ul>
+
+<pre><code>[<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>, <span class="n">4.0</span>, <span class="n">5.0</span>].exponential_moving_average(<span class="n">4</span>) <span class="c"># &#61;&gt; &#91;2.5, 3.5&#93;</span></code></pre>
+
+<p><a href="https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average" target="_blank">Reference</a></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/exponential_moving_average.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exponential_moving_average&#33;&#40;period:Int,value:T,previous_ema&#61;nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>exponential_moving_average!</strong>(period : Int, value : T, previous_ema = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#exponential_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_ema%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Evaluates the exponential moving average of <em>value</em> and appends it to <code>self</code>.</p>
+
+<p>Useful for updating an existing EMA series quickly. If <em>previous_ema</em> is <code>nil</code>,
+the <code>last</code> element in the collection will be used.</p>
+
+<pre><code>ema <span class="o">=</span> [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>].exponential_moving_average(<span class="n">4</span>) <span class="c"># &#61;&gt; &#91;2, 3&#93;</span>
+ema.exponential_moving_average!(<span class="n">4</span>, <span class="n">8</span>)               <span class="c"># &#61;&gt; &#91;2, 3, 5&#93;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/exponential_moving_average.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="simple_moving_average&#40;period:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>simple_moving_average</strong>(period : Int)
+
+        <a class="method-permalink" href="#simple_moving_average%28period%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new <code>self</code> containing the simple moving average (SMA) of each element.</p>
+
+<p>The SMA of a single element can be defined as the mean of previous <em>n</em> data:</p>
+
+<pre><code class='language-text'>SMAi = (Pi + Pi-1 + ... + Pi-(n-1)) / n</code></pre>
+
+<p>Where</p>
+
+<ul><li><em>Pi</em> is the value of element i.</li><li><em>n</em> corresponds to the <em>period</em> and is the number of datum to consider.</li></ul>
+
+<pre><code>[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>].simple_moving_average(<span class="n">4</span>) <span class="c"># &#61;&gt; &#91;2, 3&#93;</span></code></pre>
+
+<p><a href="https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average" target="_blank">Reference</a></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/simple_moving_average.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sma&#40;period:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>sma</strong>(period : Int)
+
+        <a class="method-permalink" href="#sma%28period%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Alias for <code><a href="MovingAverage.html#simple_moving_average%28period%3AInt%29-instance-method">#simple_moving_average</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/simple_moving_average.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="smma&#40;period:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>smma</strong>(period : Int)
+
+        <a class="method-permalink" href="#smma%28period%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Alias for <code><a href="MovingAverage.html#smoothed_moving_average%28period%3AInt%29-instance-method">#smoothed_moving_average</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/smoothed_moving_average.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="smma&#33;&#40;period:Int,value:T,previous_smma&#61;nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>smma!</strong>(period : Int, value : T, previous_smma = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#smma%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Alias for <code><a href="MovingAverage.html#smoothed_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method">#smoothed_moving_average!</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/smoothed_moving_average.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="smoothed_moving_average&#40;period:Int&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>smoothed_moving_average</strong>(period : Int)
+
+        <a class="method-permalink" href="#smoothed_moving_average%28period%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new <code>self</code> containing the smoothed moving average (SMMA) of each element.</p>
+
+<p>The SMMA is an exponential weighted average without a fixed period. Each previous datum
+has some affect to the current SMMA. The first element is the simple moving average,
+all subsequent elements can be calculated as follows:</p>
+
+<pre><code class='language-text'>SMMAi = (Pi - SMMAi-1) / n + SMMAi-1</code></pre>
+
+<p>Where</p>
+
+<ul><li><em>Pi</em> is the value of element i.</li><li><em>n</em> is the smoothing <em>period</em>.</li></ul>
+
+<pre><code>[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>].smoothed_moving_average(<span class="n">4</span>) <span class="c"># &#61;&gt; &#91;2, 2&#93;</span></code></pre>
+
+<p><a href="http://www.20minutetraders.com/learning/moving_averages/smooth-moving-average.php" target="_blank">Reference</a></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/smoothed_moving_average.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="smoothed_moving_average&#33;&#40;period:Int,value:T,previous_smma&#61;nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>smoothed_moving_average!</strong>(period : Int, value : T, previous_smma = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#smoothed_moving_average%21%28period%3AInt%2Cvalue%3AT%2Cprevious_smma%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Evaluates the smoothed moving average of <em>value</em> and appends it to <code>self</code>.</p>
+
+<p>Useful when updating an existing SMMA series quickly. If <em>previous_smma</em> is nil,
+the <code>last</code> element will be used.</p>
+
+<pre><code>smma <span class="o">=</span> [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>].smoothed_moving_average(<span class="n">4</span>) <span class="c"># &#61;&gt; &#91;2, 2&#93;</span>
+smma.smoothed_moving_average!(<span class="n">4</span>, <span class="n">8</span>)               <span class="c"># &#61;&gt; &#91;2, 2, 3&#93;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/ChadBowman/moving_average/blob/3e38dd4b025fa47f3cf3ca432ccc00a416fc5f65/src/moving_average/smoothed_moving_average.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
